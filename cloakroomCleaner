@@ -1,0 +1,20 @@
+#!/bin/bash
+cd Epitech
+for name in *
+do
+	if [ "${name: -1}" != "z" ] && [ "${name: -1}" != "a" ]; then
+		rm $name
+	fi
+done
+
+cd ../ISEG
+for  name in *
+do
+	if [ "${name: -1}" == "a" ]; then
+		mv $name ../Epitech
+	elif [ "${name: -1}" != "z" ]; then
+		rm $name
+	fi
+done
+cd ..
+exit 0
